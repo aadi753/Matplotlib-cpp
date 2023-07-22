@@ -44,16 +44,16 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/aadi/matplotlib_cpp
+CMAKE_SOURCE_DIR = /home/aadi/Matplotlib-cpp
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/aadi/matplotlib_cpp/build
+CMAKE_BINARY_DIR = /home/aadi/Matplotlib-cpp/build
 
 #=============================================================================
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/result.dir/all
+all: CMakeFiles/plotter.dir/all
 
 .PHONY : all
 
@@ -63,36 +63,36 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/result.dir/clean
+clean: CMakeFiles/plotter.dir/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/result.dir
+# Target rules for target CMakeFiles/plotter.dir
 
 # All Build rule for target.
-CMakeFiles/result.dir/all:
-	$(MAKE) -f CMakeFiles/result.dir/build.make CMakeFiles/result.dir/depend
-	$(MAKE) -f CMakeFiles/result.dir/build.make CMakeFiles/result.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/aadi/matplotlib_cpp/build/CMakeFiles --progress-num=1,2 "Built target result"
-.PHONY : CMakeFiles/result.dir/all
+CMakeFiles/plotter.dir/all:
+	$(MAKE) -f CMakeFiles/plotter.dir/build.make CMakeFiles/plotter.dir/depend
+	$(MAKE) -f CMakeFiles/plotter.dir/build.make CMakeFiles/plotter.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/aadi/Matplotlib-cpp/build/CMakeFiles --progress-num=1,2 "Built target plotter"
+.PHONY : CMakeFiles/plotter.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/result.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/aadi/matplotlib_cpp/build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/result.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/aadi/matplotlib_cpp/build/CMakeFiles 0
-.PHONY : CMakeFiles/result.dir/rule
+CMakeFiles/plotter.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/aadi/Matplotlib-cpp/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/plotter.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/aadi/Matplotlib-cpp/build/CMakeFiles 0
+.PHONY : CMakeFiles/plotter.dir/rule
 
 # Convenience name for target.
-result: CMakeFiles/result.dir/rule
+plotter: CMakeFiles/plotter.dir/rule
 
-.PHONY : result
+.PHONY : plotter
 
 # clean rule for target.
-CMakeFiles/result.dir/clean:
-	$(MAKE) -f CMakeFiles/result.dir/build.make CMakeFiles/result.dir/clean
-.PHONY : CMakeFiles/result.dir/clean
+CMakeFiles/plotter.dir/clean:
+	$(MAKE) -f CMakeFiles/plotter.dir/build.make CMakeFiles/plotter.dir/clean
+.PHONY : CMakeFiles/plotter.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

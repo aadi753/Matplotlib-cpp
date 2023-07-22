@@ -6,8 +6,12 @@ include_directories(
      (${Python3_INCLUDE_DIRS})
 
 )
+add_library(plotter src/plotter.cpp)
 
-add_executable(result src/main.cpp)
-target_link_libraries(result     
-     ${Python3_LIBRARIES}
-)
+# add_executable(result src/plotter.cpp)
+# target_link_libraries(result     
+#      ${Python3_LIBRARIES}
+# )
+
+install(TARGETS plotter DESTINATION lib)
+install(FILES include/matplotlibcpp.h DESTINATION include)

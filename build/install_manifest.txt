@@ -1,0 +1,2 @@
+/usr/local/lib/libplotter.a
+/usr/local/include/matplotlibcpp.h

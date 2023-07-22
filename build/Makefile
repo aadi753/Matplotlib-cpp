@@ -48,13 +48,59 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/aadi/matplotlib_cpp
+CMAKE_SOURCE_DIR = /home/aadi/Matplotlib-cpp
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/aadi/matplotlib_cpp/build
+CMAKE_BINARY_DIR = /home/aadi/Matplotlib-cpp/build
 
 #=============================================================================
 # Targets provided globally by CMake.
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
@@ -80,9 +126,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/aadi/matplotlib_cpp/build/CMakeFiles /home/aadi/matplotlib_cpp/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/aadi/Matplotlib-cpp/build/CMakeFiles /home/aadi/Matplotlib-cpp/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/aadi/matplotlib_cpp/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/aadi/Matplotlib-cpp/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -111,44 +157,44 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named result
+# Target rules for targets named plotter
 
 # Build rule for target.
-result: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 result
-.PHONY : result
+plotter: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 plotter
+.PHONY : plotter
 
 # fast build rule for target.
-result/fast:
-	$(MAKE) -f CMakeFiles/result.dir/build.make CMakeFiles/result.dir/build
-.PHONY : result/fast
+plotter/fast:
+	$(MAKE) -f CMakeFiles/plotter.dir/build.make CMakeFiles/plotter.dir/build
+.PHONY : plotter/fast
 
-src/main.o: src/main.cpp.o
+src/plotter.o: src/plotter.cpp.o
 
-.PHONY : src/main.o
+.PHONY : src/plotter.o
 
 # target to build an object file
-src/main.cpp.o:
-	$(MAKE) -f CMakeFiles/result.dir/build.make CMakeFiles/result.dir/src/main.cpp.o
-.PHONY : src/main.cpp.o
+src/plotter.cpp.o:
+	$(MAKE) -f CMakeFiles/plotter.dir/build.make CMakeFiles/plotter.dir/src/plotter.cpp.o
+.PHONY : src/plotter.cpp.o
 
-src/main.i: src/main.cpp.i
+src/plotter.i: src/plotter.cpp.i
 
-.PHONY : src/main.i
+.PHONY : src/plotter.i
 
 # target to preprocess a source file
-src/main.cpp.i:
-	$(MAKE) -f CMakeFiles/result.dir/build.make CMakeFiles/result.dir/src/main.cpp.i
-.PHONY : src/main.cpp.i
+src/plotter.cpp.i:
+	$(MAKE) -f CMakeFiles/plotter.dir/build.make CMakeFiles/plotter.dir/src/plotter.cpp.i
+.PHONY : src/plotter.cpp.i
 
-src/main.s: src/main.cpp.s
+src/plotter.s: src/plotter.cpp.s
 
-.PHONY : src/main.s
+.PHONY : src/plotter.s
 
 # target to generate assembly for a file
-src/main.cpp.s:
-	$(MAKE) -f CMakeFiles/result.dir/build.make CMakeFiles/result.dir/src/main.cpp.s
-.PHONY : src/main.cpp.s
+src/plotter.cpp.s:
+	$(MAKE) -f CMakeFiles/plotter.dir/build.make CMakeFiles/plotter.dir/src/plotter.cpp.s
+.PHONY : src/plotter.cpp.s
 
 # Help Target
 help:
@@ -156,12 +202,16 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... install/strip"
+	@echo "... install/local"
+	@echo "... install"
+	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... result"
-	@echo "... src/main.o"
-	@echo "... src/main.i"
-	@echo "... src/main.s"
+	@echo "... plotter"
+	@echo "... src/plotter.o"
+	@echo "... src/plotter.i"
+	@echo "... src/plotter.s"
 .PHONY : help
 
 

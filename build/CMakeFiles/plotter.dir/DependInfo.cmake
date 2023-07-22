@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/aadi/Matplotlib-cpp/src/main.cpp" "/home/aadi/Matplotlib-cpp/build/CMakeFiles/result.dir/src/main.cpp.o"
+  "/home/aadi/Matplotlib-cpp/src/plotter.cpp" "/home/aadi/Matplotlib-cpp/build/CMakeFiles/plotter.dir/src/plotter.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

@@ -1,3 +1,7 @@
-/home/aadi/matplotlib_cpp/build/CMakeFiles/rebuild_cache.dir
-/home/aadi/matplotlib_cpp/build/CMakeFiles/edit_cache.dir
-/home/aadi/matplotlib_cpp/build/CMakeFiles/result.dir
+/home/aadi/Matplotlib-cpp/build/CMakeFiles/install/strip.dir
+/home/aadi/Matplotlib-cpp/build/CMakeFiles/install/local.dir
+/home/aadi/Matplotlib-cpp/build/CMakeFiles/install.dir
+/home/aadi/Matplotlib-cpp/build/CMakeFiles/list_install_components.dir
+/home/aadi/Matplotlib-cpp/build/CMakeFiles/rebuild_cache.dir
+/home/aadi/Matplotlib-cpp/build/CMakeFiles/edit_cache.dir
+/home/aadi/Matplotlib-cpp/build/CMakeFiles/plotter.dir
